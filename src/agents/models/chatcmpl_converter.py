@@ -402,6 +402,7 @@ class Converter:
             nonlocal current_assistant_msg, pending_thinking_blocks
             if current_assistant_msg is None:
                 current_assistant_msg = ChatCompletionAssistantMessageParam(role="assistant")
+                current_assistant_msg["content"] = None
                 current_assistant_msg["tool_calls"] = []
                 apply_pending_reasoning_content(current_assistant_msg)
             else:
